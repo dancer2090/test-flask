@@ -1,0 +1,1 @@
+from modules.posts.modules.comments.routes import comments_blueprint as comments
