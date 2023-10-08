@@ -11,6 +11,8 @@ POSTGRES_USER = os.environ.get('POSTGRES_USER')
 POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 POSTGRES_DB = os.environ.get('POSTGRES_DB')
 SECRET_KEY = os.environ.get('SECRET_KEY')
+FLASK_ENV = os.environ.get('FLASK_ENV')
+
 
 # Project constants
 MIGRATION_DIR = os.path.join('db', 'migrations')
