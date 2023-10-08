@@ -4,6 +4,16 @@ from db.models import BlogPost
 from db import db
 
 
+def check_is_post_exist(post_id):
+    try:
+        post = BlogPost.query.get(post_id)
+
+        if post:
+            return True
+        return False
+    except exc.SQLAlchemyError as e:
+        return abort(500, description=e._message())
+
 
 def get_all_posts():
     try:
