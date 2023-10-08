@@ -4,6 +4,7 @@ from sqlalchemy_serializer import SerializerMixin
 
 
 class User(db.Model, SerializerMixin):
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)

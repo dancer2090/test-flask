@@ -3,9 +3,10 @@ from sqlalchemy_serializer import SerializerMixin
 
 
 class Comment(db.Model, SerializerMixin):
+    __tablename__ = 'comment'
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text())
-    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
 

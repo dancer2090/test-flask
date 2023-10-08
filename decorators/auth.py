@@ -1,6 +1,5 @@
 from functools import wraps
 from flask import abort, request
-from constants import ADMIN_TOKEN
 from utils.ctypto import is_valid_token
 
 error_description = "Authorization: failed"
