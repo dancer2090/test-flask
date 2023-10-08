@@ -6,7 +6,6 @@ import services.post as post_service
 def post_exist(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        print(kwargs)
         if not kwargs['post_id']:
             return abort(404, description='Post not found')
 

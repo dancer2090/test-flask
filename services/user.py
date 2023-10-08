@@ -56,7 +56,6 @@ def get_user_by_email_password(email, password):
         return obj
 
     except exc.SQLAlchemyError as e:
-        print(e)
         return abort(500, description=e._message())
 
 
@@ -70,6 +69,5 @@ def get_user_by_username(username):
             abort(404, description="User not found")
         return user.to_dict()
     except exc.SQLAlchemyError as e:
-        print(e)
         return abort(500, description=e._message())
 

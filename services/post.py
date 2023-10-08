@@ -37,7 +37,6 @@ def get_post_by_id(id):
 
 def create_post(title, content, author_id):
     try:
-        print(title, content, author_id)
         post = BlogPost(title=title, content=content, author_id=author_id)
         db.session.add(post)
         db.session.commit()
