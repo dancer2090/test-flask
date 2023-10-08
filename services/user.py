@@ -67,7 +67,11 @@ def get_user_by_username(username):
 
         if not user:
             abort(404, description="User not found")
-        return user.to_dict()
+
+        obj = user.to_dict()
+        del obj["password_hash"]
+        return obj
+
     except exc.SQLAlchemyError as e:
         return abort(500, description=e._message())
 
